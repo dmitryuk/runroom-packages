@@ -15,6 +15,7 @@ namespace Runroom\SeoBundle\Tests\App;
 
 use A2lix\AutoFormBundle\A2lixAutoFormBundle;
 use A2lix\TranslationFormBundle\A2lixTranslationFormBundle;
+use Composer\InstalledVersions;
 use DAMA\DoctrineTestBundle\DAMADoctrineTestBundle;
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Knp\Bundle\MenuBundle\KnpMenuBundle;
@@ -124,8 +125,14 @@ final class Kernel extends BaseKernel
             'strict_variables' => '%kernel.debug%',
         ]);
 
+        if (version_compare((string) InstalledVersions::getVersion('a2lix/translation-form-bundle'), '4.0.0', '<')) {
+            $key = 'locales';
+        } else {
+            $key = 'enabled_locales';
+        }
+
         $container->loadFromExtension('a2lix_translation_form', [
-            'locales' => ['es', 'en', 'ca'],
+            $key => ['es', 'en', 'ca'],
         ]);
 
         $container->loadFromExtension('sonata_media', [
