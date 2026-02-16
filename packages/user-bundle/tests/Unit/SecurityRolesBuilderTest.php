@@ -74,12 +74,11 @@ final class SecurityRolesBuilderTest extends TestCase
 
     public function testItGetsExpandedRoles(): void
     {
-        $this->authorizationChecker->method('isGranted')->willReturnMap([
-            ['ROLE_SUPER_ADMIN', null, null, true],
-            ['ROLE_ALLOWED_TO_SWITCH', null, null,  false],
-            ['ROLE_ADMIN', null, null,  true],
-            ['ROLE_USER', null, null,  false],
-        ]);
+        $this->authorizationChecker->method('isGranted')->willReturnCallback(
+            static function (string $role) {
+                return \in_array($role, ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], true);
+            }
+        );
 
         $expectedExpandedRoles = [
             'ROLE_SUPER_ADMIN' => [
@@ -111,12 +110,11 @@ final class SecurityRolesBuilderTest extends TestCase
 
     public function testItGetsRoles(): void
     {
-        $this->authorizationChecker->method('isGranted')->willReturnMap([
-            ['ROLE_SUPER_ADMIN', null, null, true],
-            ['ROLE_ALLOWED_TO_SWITCH', null, null, false],
-            ['ROLE_ADMIN', null, null, true],
-            ['ROLE_USER', null, null,  false],
-        ]);
+        $this->authorizationChecker->method('isGranted')->willReturnCallback(
+            static function (string $role) {
+                return \in_array($role, ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], true);
+            }
+        );
 
         $expectedRoles = [
             'ROLE_SUPER_ADMIN' => [
