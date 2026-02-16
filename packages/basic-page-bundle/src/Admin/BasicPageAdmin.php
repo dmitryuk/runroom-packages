@@ -90,6 +90,7 @@ final class BasicPageAdmin extends AbstractAdmin
                 ->add('translations', TranslationsType::class, [
                     'label' => false,
                     'default_locale' => null,
+                    ...($newVersion ? ['translatable_class' => BasicPage::class] : []),
                     ($newVersion ? 'children' : 'fields') => [
                         'title' => [
                             'label' => 'Title*',

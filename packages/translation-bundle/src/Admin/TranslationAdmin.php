@@ -76,6 +76,7 @@ final class TranslationAdmin extends AbstractAdmin
         $form
             ->add('key')
             ->add('translations', TranslationsType::class, [
+                ...($newVersion ? ['translatable_class' => Translation::class] : []),
                 'label' => false,
                 'default_locale' => null,
                 ($newVersion ? 'children' : 'fields') => [

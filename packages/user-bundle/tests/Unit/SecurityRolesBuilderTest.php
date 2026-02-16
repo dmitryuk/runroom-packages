@@ -75,10 +75,10 @@ final class SecurityRolesBuilderTest extends TestCase
     public function testItGetsExpandedRoles(): void
     {
         $this->authorizationChecker->method('isGranted')->willReturnMap([
-            ['ROLE_SUPER_ADMIN', null, true],
-            ['ROLE_ALLOWED_TO_SWITCH', null, false],
-            ['ROLE_ADMIN', null, true],
-            ['ROLE_USER', null, false],
+            ['ROLE_SUPER_ADMIN', null, null, true],
+            ['ROLE_ALLOWED_TO_SWITCH', null, null,  false],
+            ['ROLE_ADMIN', null, null,  true],
+            ['ROLE_USER', null, null,  false],
         ]);
 
         $expectedExpandedRoles = [
@@ -112,10 +112,10 @@ final class SecurityRolesBuilderTest extends TestCase
     public function testItGetsRoles(): void
     {
         $this->authorizationChecker->method('isGranted')->willReturnMap([
-            ['ROLE_SUPER_ADMIN', null, true],
-            ['ROLE_ALLOWED_TO_SWITCH', null, false],
-            ['ROLE_ADMIN', null, true],
-            ['ROLE_USER', null, false],
+            ['ROLE_SUPER_ADMIN', null, null, true],
+            ['ROLE_ALLOWED_TO_SWITCH', null, null, false],
+            ['ROLE_ADMIN', null, null, true],
+            ['ROLE_USER', null, null,  false],
         ]);
 
         $expectedRoles = [

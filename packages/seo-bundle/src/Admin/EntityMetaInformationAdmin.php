@@ -43,6 +43,7 @@ final class EntityMetaInformationAdmin extends AbstractAdmin
 
         $form
             ->add('translations', TranslationsType::class, [
+                ...($newVersion ? ['translatable_class' => EntityMetaInformation::class] : []),
                 'label' => false,
                 'default_locale' => null,
                 ($newVersion ? 'children' : 'fields') => [

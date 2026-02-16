@@ -89,6 +89,7 @@ final class MetaInformationAdmin extends AbstractAdmin
                 'box_class' => 'box box-solid box-primary',
             ])
                 ->add('translations', TranslationsType::class, [
+                    ...($newVersion ? ['translatable_class' => MetaInformation::class] : []),
                     'label' => false,
                     'default_locale' => null,
                     ($newVersion ? 'children' : 'fields') => [
