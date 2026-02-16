@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Runroom\TranslationBundle\Admin;
 
 use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
+use Composer\InstalledVersions;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Runroom\TranslationBundle\Entity\Translation;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
