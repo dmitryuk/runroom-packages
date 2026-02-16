@@ -43,6 +43,7 @@ final class SecurityControllerTest extends WebTestCase
         ]);
         $client->followRedirect();
 
+        var_dump($client->getRequest()->attributes->all());
         static::assertRouteSame('sonata_admin_dashboard');
 
         $client->request('GET', '/login');
