@@ -63,7 +63,6 @@ final class Kernel extends BaseKernel
         $container->setParameter('kernel.default_locale', 'en');
 
         $container->loadFromExtension('framework', [
-            'annotations' => false,
             'handle_all_throwables' => true,
             'test' => true,
             'translator' => true,
