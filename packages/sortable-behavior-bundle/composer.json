@@ -51,7 +51,7 @@
     "conflict": {
         "gedmo/doctrine-extensions": "<3.11",
         "sonata-project/admin-bundle": "<4.25",
-        "zenstruck/foundry": "<2.0 || >=2.9"
+        "zenstruck/foundry": "<2.0 || >=2.8.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
