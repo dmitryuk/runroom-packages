@@ -73,7 +73,10 @@
             "composer/package-versions-deprecated": true,
             "ergebnis/composer-normalize": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "audit": {
+            "block-insecure": false
+        }
     },
     "extra": {
         "branch-alias": {
