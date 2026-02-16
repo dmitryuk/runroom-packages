@@ -70,14 +70,16 @@ final class TranslationAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $form): void
     {
+        $newVersion = version_compare((string) InstalledVersions::getVersion('a2lix/translation-form-bundle'), '4.0.0', '>=');
+
         $form
             ->add('key')
             ->add('translations', TranslationsType::class, [
                 'label' => false,
                 'default_locale' => null,
-                'fields' => [
+                ($newVersion ? 'children' : 'fields') => [
                     'value' => [
-                        'field_type' => CKEditorType::class,
+                        ($newVersion ? 'child_type' : 'field_type') => CKEditorType::class,
                         'config' => [
                             'entities' => false,
                             'enterMode' => 'CKEDITOR.ENTER_BR',
