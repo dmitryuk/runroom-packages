@@ -75,9 +75,7 @@ final class SecurityRolesBuilderTest extends TestCase
     public function testItGetsExpandedRoles(): void
     {
         $this->authorizationChecker->method('isGranted')->willReturnCallback(
-            static function (string $role) {
-                return \in_array($role, ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], true);
-            }
+            static fn (string $role) => \in_array($role, ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], true)
         );
 
         $expectedExpandedRoles = [
@@ -111,9 +109,7 @@ final class SecurityRolesBuilderTest extends TestCase
     public function testItGetsRoles(): void
     {
         $this->authorizationChecker->method('isGranted')->willReturnCallback(
-            static function (string $role) {
-                return \in_array($role, ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], true);
-            }
+            static fn (string $role) => \in_array($role, ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'], true)
         );
 
         $expectedRoles = [

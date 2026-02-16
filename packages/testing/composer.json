@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "doctrine/dbal": "^3.6 || ^4.0",
-        "doctrine/doctrine-bundle": "^2.10",
+        "doctrine/doctrine-bundle": "^2.10 || ^3.0",
         "doctrine/orm": "^2.19 || ^3.2",
         "knplabs/knp-menu-bundle": "^3.1",
         "sonata-project/admin-bundle": "^4.25",
@@ -53,10 +53,10 @@
             "composer/package-versions-deprecated": true,
             "ergebnis/composer-normalize": true
         },
-        "sort-packages": true,
         "audit": {
             "block-insecure": false
-        }
+        },
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {

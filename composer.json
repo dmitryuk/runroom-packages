@@ -142,10 +142,10 @@
             "composer/package-versions-deprecated": true,
             "ergebnis/composer-normalize": true
         },
-        "sort-packages": true,
         "audit": {
             "block-insecure": false
-        }
+        },
+        "sort-packages": true
     },
     "scripts": {
         "normalize-run": [

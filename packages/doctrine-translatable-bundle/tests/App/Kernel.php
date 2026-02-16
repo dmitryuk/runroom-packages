@@ -88,7 +88,6 @@ final class Kernel extends BaseKernel
                 ...(version_compare((string) InstalledVersions::getVersion('doctrine/doctrine-bundle'), '3.0.0', '<') ? ['use_savepoints' => true] : []),
             ],
             'orm' => [
-                'report_fields_where_declared' => true,
                 'controller_resolver' => ['auto_mapping' => false],
                 'mappings' => [
                     'entity' => [
