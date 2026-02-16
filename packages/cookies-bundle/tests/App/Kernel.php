@@ -89,6 +89,9 @@ final class Kernel extends BaseKernel
             'secret' => 'secret',
             'session' => ['storage_factory_id' => 'session.storage.factory.mock_file'],
             'http_method_override' => false,
+            'translator' => [
+                'enabled' => true,
+            ],
         ]);
 
         $container->loadFromExtension('security', [
