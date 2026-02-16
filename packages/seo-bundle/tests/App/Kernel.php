@@ -119,7 +119,6 @@ final class Kernel extends BaseKernel
         ]);
 
         $container->loadFromExtension('twig', [
-            'exception_controller' => null,
             'strict_variables' => '%kernel.debug%',
         ]);
 
