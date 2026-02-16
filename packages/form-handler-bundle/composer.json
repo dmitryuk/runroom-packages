@@ -28,7 +28,7 @@
     "require-dev": {
         "matthiasnoback/symfony-config-test": "^6.1",
         "matthiasnoback/symfony-dependency-injection-test": "^6.1",
-        "phpunit/phpunit": "^10.5",
+        "phpunit/phpunit": "^10.5 || ^12.5",
         "runroom-packages/render-event-bundle": "^0.22"
     },
     "minimum-stability": "dev",
