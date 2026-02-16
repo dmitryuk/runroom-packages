@@ -35,7 +35,7 @@
         "phpunit/phpunit": "^10.5",
         "symfony/translation": "^6.4 || ^7.1 || ^8.0",
         "zenstruck/foundry": "^2.0",
-        "symfony/var-exporter": "^6.4 || ^7.1 || ^8.0"
+        "symfony/var-exporter": "^6.4 || ^7.1"
     },
     "conflict": {
         "zenstruck/foundry": "<2.0 || >=2.8.7"
