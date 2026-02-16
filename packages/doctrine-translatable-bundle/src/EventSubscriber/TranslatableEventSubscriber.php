@@ -98,8 +98,8 @@ final class TranslatableEventSubscriber
     }
 
     /**
-     * @param \ReflectionClass<object> $reflectionClass
-     * @param ClassMetadata<object>    $classMetadata
+     * @param \ReflectionClass<covariant object> $reflectionClass
+     * @param ClassMetadata<object>              $classMetadata
      */
     private function mapTranslatable(\ReflectionClass $reflectionClass, ClassMetadata $classMetadata): void
     {
@@ -121,8 +121,8 @@ final class TranslatableEventSubscriber
     }
 
     /**
-     * @param \ReflectionClass<object> $reflectionClass
-     * @param ClassMetadata<object>    $classMetadata
+     * @param \ReflectionClass<covariant object> $reflectionClass
+     * @param ClassMetadata<object>              $classMetadata
      */
     private function mapTranslation(
         \ReflectionClass $reflectionClass,
