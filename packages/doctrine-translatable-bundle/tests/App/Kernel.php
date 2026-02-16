@@ -85,7 +85,6 @@ final class Kernel extends BaseKernel
             'dbal' => [
                 'url' => 'sqlite:///%kernel.cache_dir%/app.db',
                 'logging' => false,
-                'use_savepoints' => true,
             ],
             'orm' => [
                 'report_fields_where_declared' => true,
