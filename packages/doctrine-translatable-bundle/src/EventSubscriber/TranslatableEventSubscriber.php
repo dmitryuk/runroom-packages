@@ -59,11 +59,11 @@ final class TranslatableEventSubscriber
         }
 
         if (is_a($reflectionClass->getName(), TranslatableInterface::class, true)) {
-            $this->mapTranslatable($reflectionClass, $classMetadata);
+            $this->mapTranslatable($reflectionClass, $classMetadata); // @phpstan-ignore argument.type
         }
 
         if (is_a($reflectionClass->getName(), TranslationInterface::class, true)) {
-            $this->mapTranslation($reflectionClass, $classMetadata, $loadClassMetadataEventArgs->getObjectManager());
+            $this->mapTranslation($reflectionClass, $classMetadata, $loadClassMetadataEventArgs->getObjectManager()); // @phpstan-ignore argument.type
         }
     }
 
@@ -98,8 +98,8 @@ final class TranslatableEventSubscriber
     }
 
     /**
-     * @param \ReflectionClass<covariant object> $reflectionClass
-     * @param ClassMetadata<object>              $classMetadata
+     * @param \ReflectionClass<object> $reflectionClass
+     * @param ClassMetadata<object>    $classMetadata
      */
     private function mapTranslatable(\ReflectionClass $reflectionClass, ClassMetadata $classMetadata): void
     {
@@ -121,8 +121,8 @@ final class TranslatableEventSubscriber
     }
 
     /**
-     * @param \ReflectionClass<covariant object> $reflectionClass
-     * @param ClassMetadata<object>              $classMetadata
+     * @param \ReflectionClass<object> $reflectionClass
+     * @param ClassMetadata<object>    $classMetadata
      */
     private function mapTranslation(
         \ReflectionClass $reflectionClass,
