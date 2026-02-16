@@ -155,6 +155,12 @@ final class Kernel extends BaseKernel
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
         $routes->import($this->getProjectDir() . '/routing.yaml');
+        $newVersion = version_compare((string) InstalledVersions::getVersion('sonata-project/admin-bundle'), '4.39.0', '>=');
+        if ($newVersion) {
+            $routes->import($this->getProjectDir() . '/sonata.yaml');
+        } else {
+            $routes->import($this->getProjectDir() . '/sonata-legacy.yaml');
+        }
     }
 
     private function getBaseDir(): string

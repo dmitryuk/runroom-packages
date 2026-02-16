@@ -285,6 +285,12 @@ final class Kernel extends BaseKernel
     {
         $routes->import($this->getProjectDir() . '/routing.yaml');
 
+        $newVersion = version_compare((string) InstalledVersions::getVersion('sonata-project/admin-bundle'), '4.39.0', '>=');
+        if ($newVersion) {
+            $routes->import($this->getProjectDir() . '/routing-sonata.yaml');
+        } else {
+            $routes->import($this->getProjectDir() . '/routing-sonata-legacy.yaml');
+        }
         $routes->add('route.entity', '/entity/{slug}')
             ->controller('controller');
     }
