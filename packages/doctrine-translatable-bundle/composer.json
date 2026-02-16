@@ -37,6 +37,9 @@
         "zenstruck/foundry": "^2.0",
         "symfony/var-exporter": "^6.4 || ^7.1 || ^8.0"
     },
+    "conflict": {
+        "zenstruck/foundry": "<2.0 || >=2.9"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {

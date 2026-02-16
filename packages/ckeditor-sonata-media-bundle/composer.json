@@ -47,6 +47,9 @@
         "symfony/twig-bundle": "^6.4 || ^7.1 || ^8.0",
         "zenstruck/foundry": "^2.0"
     },
+    "conflict": {
+        "zenstruck/foundry": "<2.0 || >=2.9"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
@@ -74,4 +77,4 @@
             "dev-master": "0.22-dev"
         }
     }
-}
+},
