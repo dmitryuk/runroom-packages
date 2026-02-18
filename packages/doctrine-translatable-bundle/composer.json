@@ -38,7 +38,7 @@
         "zenstruck/foundry": "^2.0"
     },
     "conflict": {
-        "zenstruck/foundry": "<2.0 || >=2.8.7"
+        "zenstruck/foundry": "<2.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
